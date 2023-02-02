@@ -1,0 +1,30 @@
+import java.awt.Component;
+import javax.swing.JOptionPane;
+import javax.swing.*;
+import java.awt.event.*;
+
+public class DivisionApplet {
+    JFrame frame;
+
+    public static void main(String[] args) {
+        DivisionApplet db = new DivisionApplet();
+    }
+
+    public DivisionApplet() {
+        frame = new JFrame("Show Message Box");
+        JButton button = new JButton("Hello World!!");
+        button.setAlignmentX((float) 100.00);
+
+        button.addActionListener(new MyAction());
+        frame.add(button);
+        frame.setSize(300, 300);
+        frame.setVisible(true);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    }
+
+    public class MyAction implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            JOptionPane.showMessageDialog(frame, "Hello World!!");
+        }
+    }
+}
